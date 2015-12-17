@@ -7,7 +7,6 @@
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.CheckBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Converters:ToUpperConverter x:Key="ToUpperConverter" />
     <BooleanToVisibilityConverter x:Key="bool2VisibilityConverter" />
 
     <Style x:Key="MetroDataGridCheckBox"
@@ -117,6 +116,10 @@
 
     <Style x:Key="MetroDataGridColumnHeader"
            TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Controls:ControlsHelper.ContentCharacterCasing"
+                Value="Upper" />
+        <Setter Property="FontWeight"
+                Value="SemiBold" />
         <Setter Property="SnapsToDevicePixels"
                 Value="True" />
         <Setter Property="MinWidth"
@@ -155,14 +158,17 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}" />
 
-                        <ContentPresenter x:Name="HeaderContent"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          Margin="{TemplateBinding Padding}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          RecognizesAccessKey="True"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        <Controls:ContentControlEx x:Name="HeaderContent"
+                                                   Content="{TemplateBinding Content}"
+                                                   ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                   ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                   Padding="{TemplateBinding Padding}"
+                                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                   RecognizesAccessKey="True"
+                                                   ContentCharacterCasing="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.ContentCharacterCasing)}" />
 
                         <Path x:Name="SortArrow"
                               Visibility="Collapsed"
@@ -240,14 +246,6 @@
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ContentTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <TextBlock FontWeight="SemiBold"
-                               Text="{Binding Converter={StaticResource ToUpperConverter}}" />
-                </DataTemplate>
             </Setter.Value>
         </Setter>
     </Style>

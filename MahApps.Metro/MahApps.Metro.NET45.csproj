@@ -133,6 +133,7 @@
     <Compile Include="Behaviours\TabControlSelectFirstVisibleTabBehavior.cs" />
     <Compile Include="Behaviours\WindowsSettingBehaviour.cs" />
     <Compile Include="Controls\ButtonsAlignment.cs" />
+    <Compile Include="Controls\ContentControlEx.cs" />
     <Compile Include="Controls\Dialogs\DialogCoordinator.cs" />
     <Compile Include="Controls\Dialogs\DialogParticipation.cs" />
     <Compile Include="Controls\Dialogs\IDialogCoordinator.cs" />
@@ -165,12 +166,17 @@
     <Compile Include="Controls\Helper\DataGridRowHelper.cs" />
     <Compile Include="Controls\Helper\ExpanderHelper.cs" />
     <Compile Include="Controls\Helper\GroupBoxHelper.cs" />
+    <Compile Include="Controls\Helper\MouseWheelChange.cs" />
+    <Compile Include="Controls\Helper\MouseWheelState.cs" />
+    <Compile Include="Controls\Helper\SliderHelper.cs" />
+    <Compile Include="Controls\Helper\VisibilityHelper.cs" />
     <Compile Include="Controls\MetroAnimatedSingleRowTabControl.cs" />
     <Compile Include="Controls\MetroAnimatedTabControl.cs" />
     <Compile Include="Controls\MetroNavigationWindow.cs" />
     <Compile Include="Controls\MetroProgressBar.cs" />
     <Compile Include="Controls\MetroTabControl.cs" />
     <Compile Include="Controls\MetroTabItem.cs" />
+    <Compile Include="Controls\MetroThumb.cs" />
     <Compile Include="Controls\MetroWindowHelpers.cs" />
     <Compile Include="Controls\MultiFrameImage.cs" />
     <Compile Include="Controls\NumericUpDown.cs" />
@@ -188,6 +194,7 @@
     <Compile Include="Controls\SplitButton.cs" />
     <Compile Include="Controls\Helper\TabControlHelper.cs" />
     <Compile Include="Controls\Helper\ToggleButtonHelper.cs" />
+    <Compile Include="Controls\Theme.cs" />
     <Compile Include="Controls\WindowButtonCommands.cs" />
     <Compile Include="Controls\WindowCommandsOverlayBehavior.cs" />
     <Compile Include="Converters\BackgroundToForegroundConverter.cs" />
@@ -372,7 +379,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\Clean\CleanStatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Clean\CleanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Clean\CleanWindowButtonCommands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Clean\CleanWindowButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Clean\CleanWindowCommands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -620,6 +643,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Thumb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Tile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -629,6 +656,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\TransitioningContentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\WindowButtonCommands.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\WindowCommands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
